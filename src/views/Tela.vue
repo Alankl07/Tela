@@ -8,13 +8,17 @@
             </v-container>
         </v-row>
         <v-row>
-            <v-container>
-                <v-layout class="topo">
-                    <v-p class="ml-8">OPTANTE</v-p><v-p class="ml-8">SENTENÇA</v-p><v-p class="ml-8">AVERBAÇÕES</v-p><v-p class="ml-8">OBSERVAÇÕES</v-p><v-p class="ml-8">COMUNICAÇÃO</v-p><v-p class="ml-8">IMPRIMIR</v-p>
-                </v-layout>
-            </v-container>
+            <v-card style="position:relative; left:26px; margin-top:60px">
+                <v-tabs
+                v-model="tab" 
+                background-color=" FFFFCC " color="blue"
+                align-with-title
+                >
+                <v-tab>OPTANTE</v-tab><v-tab>SENTENÇA</v-tab><v-tab>AVERBAÇÃO</v-tab><v-tab>OBSERVAÇÃO</v-tab>
+                <v-tab>COMUNICAÇÃO</v-tab><v-tab>IMPRIMIR</v-tab>
+                </v-tabs>
+            </v-card>
         </v-row>
-        <v-col id="lineTopo" class="d-flex " cols="9" ></v-col>
         <v-row>
             <v-container >
                 <v-layout >
@@ -122,6 +126,8 @@
 <script>
     export default {
         data: () => ({
+            length: 15,
+            tab: null,
             sexo: ['Masculino', 'Feminino'],
             profissao:['Desenvolvedor', 'Arquiteto', 'Motorista', 'Vendedor'],
             estadoCivil:['Casado', 'Solteiro'],
@@ -131,7 +137,7 @@
 
 
         }),
-    }
+}
 </script>
 
 <style>
@@ -145,7 +151,7 @@
     .topo{
         position: relative;
         margin-top: 100px;
-        font-weight: bolder black;
+        font-weight: bolder #ad9e9e;
         font-weight: bold;
     }
 
@@ -164,12 +170,6 @@
         border-top: 1.5pt solid rgba(170, 161, 161, 0.2);
         left: 150px;
         top: -100px;
-    }
-
-    #lineTopo{
-        position: relative;
-        border-top: 1.5pt solid rgba(170, 161, 161, 0.7);
-        left: 15px;
     }
 
     .naturalidade{
